@@ -1,0 +1,37 @@
+body {
+    margin: 0;
+    background-color: rgb(53, 54, 58);
+    color: #FFF;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.img-logo {
+    width: 100px;
+    height: 100px;
+}
+
+.logo {
+    margin: 50px 0 20px 0;
+    width: 100%;
+    text-align: center;
+}
+
+h2 {
+    font-weight: normal;
+    font-size: 20px;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: #8AB4F8;
+}
+
+p {
+    font-size: 14px;
+}
+
+.container {
+    width: 600px;
+    margin: auto;
+}
