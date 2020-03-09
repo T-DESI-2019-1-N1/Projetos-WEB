@@ -34,4 +34,10 @@ p {
 .container {
     width: 600px;
     margin: auto;
+    display: flex;
+}
+
+.um {
+    width: calc(50% - 20px);
+    padding: 10px;
 }

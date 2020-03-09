@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro usando o framework vuejs</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+
+    <div id="app">
+        <input type="text" v-model="nome"><br>
+        <input type="text" v-model="email"><br>
+        <button v-on:click="salvar">Salvar</button><br>
+
+        <table style="border: 1px solid #000">
+            <thead style="background: orange;">
+                <tr>
+                    <th>Código</th>
+                    <th>Nome</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="(pessoa, key) in pessoas" >
+                    <td>{{ key + 1 }}</td>
+                    <td>{{ pessoa.nome }}</td>
+                    <td>{{ pessoa.email }}</td>
+                </tr>
+            </tbody>
+            <tfoot style="background: green;" v-if="pessoas.length == 0">
+                <tr>
+                    <td colspan="3">Nenhuma pessoa cadastrada</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+    <script>
+        let app = new Vue({
+            el: "#app",
+            data: {
+                nome: "",
+                email: "",
+                pessoas: []
+            }, methods: {
+                salvar: function() {
+                    this.pessoas.push({
+                        nome: this.nome,
+                        email: this.email
+                    })
+                }
+            }
+        })
+    </script>
+</body>
+</html>

@@ -6,14 +6,15 @@
     <title>Espaço do estudante fake</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 </head>
 <body>
     <div id="caixa-login">
-        <h1>Bem-vindo</h1>
-        <span id="bem-vindo-subtexto">ao Espaço do estudante</span>        
+        <h1>{{ boasVindas }}</h1>
+        <span v-bind:title="boasVindas" id="bem-vindo-subtexto">ao Espaço do estudante</span>        
         <div class="inputs">
             <i class="far fa-user"></i>
-            <input type="text" placeholder="Usuário">
+            <input type="text" placeholder="Usuário" v-model="boasVindas">
         </div>        
         <div class="inputs">
             <i class="fas fa-lock"></i>
@@ -29,6 +30,13 @@
     </div>
 
     
-
+<script>
+    let app = new Vue({
+        el: "#caixa-login",
+        data: {
+            boasVindas: "Bem-vindo"
+        }
+    })
+</script>
 </body>
 </html>
